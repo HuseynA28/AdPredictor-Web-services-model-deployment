@@ -31,8 +31,12 @@ jobs:
     - name: Log in to Docker Hub
       run: echo "${{ secrets.PASSWORD }}" | docker login -u "${{ secrets.DOCKERUSERNAME }}" --password-stdin
 
+    - name: Log in to Docker Hub
+      run: echo "${{ secrets.PASSWORD }}" | docker login -u "${{ secrets.DOCKERUSERNAME }}" --password-stdin
+    
     - name: Build Docker image
-      run: docker build -t your-docker-username/adpredictor-web-service:latest .
-
+      run: docker build -t ${{ secrets.DOCKERUSERNAME }}/adpredictor-web-service:latest .
+    
     - name: Push Docker image
-      run: docker push your-docker-username/adpredictor-web-service:latest
+      run: docker push ${{ secrets.DOCKERUSERNAME }}/adpredictor-web-service:latest
+    
