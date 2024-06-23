@@ -3,7 +3,7 @@
 
 ## Overview
 
-The AdPredictor Web Service is a cutting-edge solution designed by Huseyn Abdullayev, aimed at revolutionizing the advertising industry. This project leverages a machine learning model to predict advertising sales based on investment across various channels such as TV, radio, and newspapers. Hosted using FastAPI and containerized with Docker, the service ensures scalability and ease of deployment.
+The AdPredictor Web Service is a cutting-edge solution , aimed at revolutionizing the advertising industry. This project leverages a machine learning model to predict advertising sales based on investment across various channels such as TV, radio, and newspapers. Hosted using FastAPI and containerized with Docker, the service ensures scalability and ease of deployment.
 
 ## Business Problem Solved
 
