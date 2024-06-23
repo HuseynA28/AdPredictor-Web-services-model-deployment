@@ -26,10 +26,6 @@ This automated system addresses the challenge of ensuring that the predictive mo
 - **Decentralization of Tasks**: Frees up the Data Science team from deployment tasks by automating model updates and image creation, allowing them to focus on model improvement and research.
 - **Seamless Access to Latest Model**: Ensures that all stakeholders have instant access to the most recent model without any need for manual updating or intervention.
 
-## Conclusion
-
-By automating the training and deployment of the AdPredictor model with GitHub Actions to Docker Hub, this project efficiently bridges the gap between data science and operational deployment. It ensures that the predictive service is robust, up-to-date, and readily available for making accurate predictions, thus maximizing the advertising spend ROI for businesses.
-
 
 
 ## Project Structure
@@ -100,6 +96,11 @@ AdPredictor-Web-Service/
 - **FastAPI**: For building a highly efficient and scalable API service.
 - **Docker**: For containerizing the application and ensuring environment consistency.
 - **GitHub Actions**: For continuous integration and continuous deployment (CI/CD), automating the model training and deployment process.
+
+## Conclusion
+
+By automating the training and deployment of the AdPredictor model with GitHub Actions to Docker Hub, this project efficiently bridges the gap between data science and operational deployment. It ensures that the predictive service is robust, up-to-date, and readily available for making accurate predictions, thus maximizing the advertising spend ROI for businesses.
+
 
 ## Author
 
