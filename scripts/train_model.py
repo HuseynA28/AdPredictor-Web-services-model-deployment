@@ -4,7 +4,7 @@ from sklearn.linear_model import LinearRegression
 import joblib
 
 # Load the dataset
-data = pd.read_csv(r'C:\Users\habdullayev\Documents\GitHub\AdPredictor-Web-services-model-deployment\data\advertising.csv')
+data = pd.read_csv('data/advertising.csv')
 
 # Split the dataset into features and target variable
 X = data[['TV', 'Radio', 'Newspaper']]
