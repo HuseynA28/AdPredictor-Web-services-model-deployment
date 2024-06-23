@@ -1,20 +1,38 @@
-# Use an official Python runtime as a parent image
-FROM python:3.10-slim
+name: Train Model and Deploy
 
-# Set the working directory to /app
-WORKDIR /app
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
 
-# Copy the entire project into the container at /app
-COPY . /app
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
 
-# Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-# Make port 8000 available to the world outside this container
-EXPOSE 8000
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.10'
 
-# Define environment variable for the model path
-ENV MODEL_PATH=/app/models/advertising_model.pkl
+    - name: Install dependencies
+      run: pip install -r requirements.txt
 
-# Run FastAPI.py when the container launches, adjust the path as necessary
-CMD ["uvicorn", "scripts.FastAPI:app", "--host", "0.0.0.0", "--port", "8000"]
+    - name: Train model
+      run: python scripts/train_model.py
+
+    - name: Log in to Docker Hub
+      run: echo "${{ secrets.PASSWORD }}" | docker login -u "${{ secrets.DOCKERUSERNAME }}" --password-stdin
+
+    - name: Build Docker image
+      run: docker build -t your-docker-username/adpredictor-web-service:latest .
+
+    - name: Push Docker image
+      run: docker push your-docker-username/adpredictor-web-service:latest
