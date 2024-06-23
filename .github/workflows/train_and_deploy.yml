@@ -25,13 +25,8 @@ jobs:
     - name: Install dependencies
       run: pip install -r requirements.txt
 
-    - name: Train model
+    - name: Train and save model
       run: python scripts/train_model.py
-
-    - name: Save trained model
-      run: |
-        mkdir -p models
-        mv 'models/advertising_model.pkl  correct it 
 
     - name: Log in to Docker Hub
       run: echo "${{ secrets.PASSWORD }}" | docker login -u "${{ secrets.DOCKERUSERNAME }}" --password-stdin
