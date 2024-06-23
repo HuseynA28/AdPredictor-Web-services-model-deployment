@@ -1,7 +1,13 @@
 
-# AdPredictor Web Service
+# AdPredictor Web Service by Huseyn Abdullayev
 
-This project hosts a machine learning model using FastAPI, which predicts advertising sales based on TV, radio, and newspaper spend. The service is containerized using Docker for easy deployment and scalability.
+## Overview
+
+The AdPredictor Web Service is a cutting-edge solution designed by Huseyn Abdullayev, aimed at revolutionizing the advertising industry. This project leverages a machine learning model to predict advertising sales based on investment across various channels such as TV, radio, and newspapers. Hosted using FastAPI and containerized with Docker, the service ensures scalability and ease of deployment.
+
+## Business Problem Solved
+
+This service addresses the critical business need of optimizing advertising spend. By predicting the sales outcomes based on advertising investments, businesses can allocate their budgets more efficiently, maximizing ROI and reducing wastage in underperforming channels.
 
 ## Project Structure
 
@@ -9,59 +15,73 @@ This project hosts a machine learning model using FastAPI, which predicts advert
 AdPredictor-Web-Service/
 ├── .github/
 │   └── workflows/
-│       └── train_and_deploy.yml  # CI/CD pipeline for training and deploying the model
+│       └── train_and_deploy.yml  # CI/CD pipeline for automating training and deployment
 ├── data/
-│   └── advertising.csv            # Dataset used for training the model
+│   └── advertising.csv            # Dataset for model training
 ├── models/
-│   └── advertising_model.pkl      # Trained machine learning model
+│   └── advertising_model.pkl      # Trained predictive model
 ├── scripts/
-│   ├── FastAPI.py                 # FastAPI application file
-│   └── train_model.py             # Script for training the machine learning model
-├── Dockerfile                     # Dockerfile for building the container image
-└── requirements.txt               # Python dependencies required for the project
+│   ├── FastAPI.py                 # FastAPI application for API service
+│   └── train_model.py             # Script to train the predictive model
+├── Dockerfile                     # Docker configuration for building the service
+└── requirements.txt               # Dependencies required for the project
 ```
 
-## Features
+## Key Features
 
-- **Model Training**: Automatically retrain the model using GitHub Actions upon pushing changes.
-- **API Service**: A FastAPI application that serves the trained model predictions.
-- **Dockerization**: Containerized application for easy deployment and environment consistency.
+- **Automated Model Training**: Utilizes GitHub Actions to retrain the machine learning model whenever updates are pushed, ensuring the model evolves with new data.
+- **Robust API Service**: Deployed via FastAPI, providing a responsive and scalable service for real-time prediction requests.
+- **Containerization with Docker**: Guarantees consistent environments from development to production, simplifying deployments and testing.
 
-## How to Run Locally
+## Getting Started
 
-### Clone the Repository:
-```bash
-git clone https://github.com/<your-username>/AdPredictor-Web-Service.git
-cd AdPredictor-Web-Service
-```
+### Prerequisites
 
-### Build the Docker Image:
-```bash
-docker build -t adpredictor-web-service .
-```
+- Docker installed on your machine
+- Git for cloning the repository
 
-### Run the Container:
-```bash
-docker run -p 8000:8000 adpredictor-web-service
-```
+### Setup Instructions
 
-### Access the API:
-Open your web browser and navigate to:
-```
-http://localhost:8000
-```
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/<your-username>/AdPredictor-Web-Service.git
+   cd AdPredictor-Web-Service
+   ```
 
-## API Endpoints
+2. **Build the Docker Image**:
+   ```bash
+   docker build -t adpredictor-web-service .
+   ```
 
-- **/predict** - POST method; accepts JSON input with TV, radio, and newspaper advertising budgets and returns the sales prediction.
+3. **Run the Docker Container**:
+   ```bash
+   docker run -p 8000:8000 adpredictor-web-service
+   ```
+
+4. **Access the API**:
+   Navigate to `http://localhost:8000` in your web browser to interact with the API.
+
+## API Documentation
+
+- **POST /predict**: Receives advertising spend data (TV, radio, newspaper) and returns sales predictions.
   ```bash
   curl -X POST http://localhost:8000/predict -H "Content-Type: application/json" -d '{"tv": 150, "radio": 25, "newspaper": 15}'
   ```
-- **/status** - GET method; returns the status of the API service.
+- **GET /status**: Provides the current status of the API.
   ```bash
   curl http://localhost:8000/status
   ```
 
-## How to Use the API
+## Technologies Used
 
-Interact with the API using tools like curl or Postman. Example cURL requests are provided above for the `/predict` and `/status` endpoints.
+- **FastAPI**: For building a highly efficient and scalable API service.
+- **Docker**: For containerizing the application and ensuring environment consistency.
+- **GitHub Actions**: For continuous integration and continuous deployment (CI/CD), automating the model training and deployment process.
+
+## Author
+
+- **Huseyn Abdullayev**
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
