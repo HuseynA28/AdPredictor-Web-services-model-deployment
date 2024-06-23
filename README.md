@@ -1,5 +1,5 @@
 
-# AdPredictor Web Service by Huseyn Abdullayev
+# AdPredictor Web Service (Deploying ML Model Automatically with GitHub Actions to Docker Hub)
 
 ## Overview
 
