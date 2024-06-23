@@ -91,6 +91,22 @@ AdPredictor-Web-Service/
   curl http://localhost:8000/status
   ```
 
+## Continuous Integration and Deployment with GitHub Actions
+To automate the training of your model and deployment to Docker Hub, follow these steps:
+
+Add Docker Credentials to GitHub Secrets:
+
+Go to your repository on GitHub.
+Navigate to Settings > Secrets and variables > Actions.
+Add the following secrets:
+DOCKERUSERNAME: Your Docker Hub username.
+PASSWORD: Your Docker Hub password.
+Push the Dataset to Your GitHub Repository:
+
+Ensure your dataset is included in the repository so it can be accessed during the training process.
+GitHub Actions Workflow:
+Create a .github/workflows/deploy.yml file in your repository with the following content:
+
 ## Technologies Used
 
 - **FastAPI**: For building a highly efficient and scalable API service.
