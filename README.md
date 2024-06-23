@@ -1,13 +1,36 @@
+# AdPredictor Web Service (Automating ML Model Deployment with GitHub Actions to Docker Hub)
 
-# AdPredictor Web Service (Deploying ML Model Automatically with GitHub Actions to Docker Hub)
+## Introduction
 
-## Overview
+The AdPredictor Web Service automates the lifecycle of a machine learning model that predicts advertising sales based on expenditures in different media channels (TV, radio, and newspapers). This project utilizes GitHub Actions to automate the training and deployment of the machine learning model, seamlessly updating the Docker image on Docker Hub whenever the underlying model or dataset changes.
 
-The AdPredictor Web Service is a cutting-edge solution , aimed at revolutionizing the advertising industry. This project leverages a machine learning model to predict advertising sales based on investment across various channels such as TV, radio, and newspapers. Hosted using FastAPI and containerized with Docker, the service ensures scalability and ease of deployment.
+## Workflow Description
 
-## Business Problem Solved
+The workflow of this project is designed to enhance collaboration between two key departments:
 
-This service addresses the critical business need of optimizing advertising spend. By predicting the sales outcomes based on advertising investments, businesses can allocate their budgets more efficiently, maximizing ROI and reducing wastage in underperforming channels.
+- **Data Science Department**: Responsible for training and updating the machine learning model. Whenever the model's code or the dataset is updated, these changes trigger GitHub Actions.
+- **Deployment and Operations Department**: Utilizes the updated model for prediction tasks. The automated pipeline ensures that they always have access to the latest version of the model via Docker Hub, without needing to manually handle updates.
+
+## Problem Solved
+
+This automated system addresses the challenge of ensuring that the predictive model is always up-to-date with the latest data and improvements, without manual intervention. The automation pipeline does the following:
+
+1. **Trains the Model Automatically**: Whenever there are updates to the dataset or the model's code, GitHub Actions automatically trigger the retraining process.
+2. **Creates a Docker Image**: Post-training, a Docker image encapsulating the trained model is automatically created.
+3. **Deploys to Docker Hub**: The new Docker image is then pushed to Docker Hub, making it readily available for deployment.
+4. **Easy Access and Deployment**: Stakeholders and the Deployment Department can pull the updated Docker image from Docker Hub at any time to make accurate predictions based on the latest model.
+
+## Benefits
+
+- **Continuous Integration and Deployment**: Any changes in the dataset or model logic trigger a new cycle of integration and deployment, ensuring that the model is never outdated.
+- **Decentralization of Tasks**: Frees up the Data Science team from deployment tasks by automating model updates and image creation, allowing them to focus on model improvement and research.
+- **Seamless Access to Latest Model**: Ensures that all stakeholders have instant access to the most recent model without any need for manual updating or intervention.
+
+## Conclusion
+
+By automating the training and deployment of the AdPredictor model with GitHub Actions to Docker Hub, this project efficiently bridges the gap between data science and operational deployment. It ensures that the predictive service is robust, up-to-date, and readily available for making accurate predictions, thus maximizing the advertising spend ROI for businesses.
+
+
 
 ## Project Structure
 
