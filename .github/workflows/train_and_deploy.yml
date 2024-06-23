@@ -31,7 +31,7 @@ jobs:
     - name: Save trained model
       run: |
         mkdir -p models
-        mv path/to/your/trained_model.pkl models/advertising_model.pkl
+        mv 'models/advertising_model.pkl  correct it 
 
     - name: Log in to Docker Hub
       run: echo "${{ secrets.PASSWORD }}" | docker login -u "${{ secrets.DOCKERUSERNAME }}" --password-stdin
