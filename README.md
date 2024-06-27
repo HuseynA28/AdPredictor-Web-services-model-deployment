@@ -1,4 +1,4 @@
-# AdPredictor Web Service (Automating ML Model Deployment with GitHub Actions to Docker Hub).
+# AdPredictor Web Service (Automating ML Model Deployment with GitHub Actions to Docker Hub)..
 
 ## Introduction
 
